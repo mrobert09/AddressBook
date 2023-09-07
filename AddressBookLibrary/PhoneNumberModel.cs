@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Management.Instrumentation;
 using System.Text;
@@ -9,6 +10,8 @@ namespace AddressBookLibrary
 {
     public class PhoneNumberModel
     {
+        private string number;
+
         /// <summary>
         /// Constructor for PhoneNumberModel.
         /// </summary>
@@ -27,6 +30,19 @@ namespace AddressBookLibrary
         /// <summary>
         /// Represents a phone number in string format.
         /// </summary>
-        public string Number { get; set; }
+        public string Number {
+            get { return number; }
+            set
+            {
+                if (value.Length <= 0)
+                {
+                    number = null;
+                }
+                else
+                {
+                    number = value;
+                }
+            }
+        }
     }
 }

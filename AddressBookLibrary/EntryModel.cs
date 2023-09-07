@@ -21,7 +21,7 @@ namespace AddressBookLibrary
         /// <summary>
         /// A list of all addresses associated with this entry.
         /// </summary>
-        public List<AddressModel> Addresses { get; set; } = new List<AddressModel>();
+        public AddressModel Address { get; set; } = new AddressModel();
 
         /// <summary>
         /// A list of all phone numbers associated with this entry.
