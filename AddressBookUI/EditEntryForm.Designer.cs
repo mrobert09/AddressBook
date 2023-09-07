@@ -38,14 +38,17 @@
             stateComboBox = new ComboBox();
             zipcodeLabel = new Label();
             zipcodeTextBox = new TextBox();
-            textBox1 = new TextBox();
+            workTextBox = new TextBox();
             workLabel = new Label();
-            textBox2 = new TextBox();
+            mobileTextBox = new TextBox();
             mobileLabel = new Label();
-            textBox3 = new TextBox();
+            homeTextBox = new TextBox();
             homeLabel = new Label();
             phoneLabel = new Label();
             saveButton = new Button();
+            tagLabel = new Label();
+            tagTextBox = new TextBox();
+            tagInfoTextBox = new Label();
             SuspendLayout();
             // 
             // nameLabel
@@ -60,6 +63,7 @@
             // nameTextBox
             // 
             nameTextBox.Location = new Point(100, 28);
+            nameTextBox.MaxLength = 50;
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(276, 23);
             nameTextBox.TabIndex = 1;
@@ -67,6 +71,7 @@
             // streetTextBox
             // 
             streetTextBox.Location = new Point(100, 71);
+            streetTextBox.MaxLength = 50;
             streetTextBox.Name = "streetTextBox";
             streetTextBox.Size = new Size(276, 23);
             streetTextBox.TabIndex = 3;
@@ -84,6 +89,7 @@
             // cityTextBox
             // 
             cityTextBox.Location = new Point(100, 115);
+            cityTextBox.MaxLength = 50;
             cityTextBox.Name = "cityTextBox";
             cityTextBox.Size = new Size(276, 23);
             cityTextBox.TabIndex = 5;
@@ -111,6 +117,7 @@
             stateComboBox.FormattingEnabled = true;
             stateComboBox.Items.AddRange(new object[] { "AL", "AK", "AZ", "AR", "AS", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
             stateComboBox.Location = new Point(100, 160);
+            stateComboBox.MaxLength = 2;
             stateComboBox.Name = "stateComboBox";
             stateComboBox.Size = new Size(59, 23);
             stateComboBox.TabIndex = 7;
@@ -127,16 +134,18 @@
             // zipcodeTextBox
             // 
             zipcodeTextBox.Location = new Point(267, 160);
+            zipcodeTextBox.MaxLength = 10;
             zipcodeTextBox.Name = "zipcodeTextBox";
             zipcodeTextBox.Size = new Size(109, 23);
             zipcodeTextBox.TabIndex = 9;
             // 
-            // textBox1
+            // workTextBox
             // 
-            textBox1.Location = new Point(100, 339);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(276, 23);
-            textBox1.TabIndex = 15;
+            workTextBox.Location = new Point(100, 339);
+            workTextBox.MaxLength = 20;
+            workTextBox.Name = "workTextBox";
+            workTextBox.Size = new Size(276, 23);
+            workTextBox.TabIndex = 15;
             // 
             // workLabel
             // 
@@ -147,12 +156,13 @@
             workLabel.Text = "Work";
             workLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // textBox2
+            // mobileTextBox
             // 
-            textBox2.Location = new Point(100, 295);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(276, 23);
-            textBox2.TabIndex = 13;
+            mobileTextBox.Location = new Point(100, 295);
+            mobileTextBox.MaxLength = 20;
+            mobileTextBox.Name = "mobileTextBox";
+            mobileTextBox.Size = new Size(276, 23);
+            mobileTextBox.TabIndex = 13;
             // 
             // mobileLabel
             // 
@@ -163,12 +173,13 @@
             mobileLabel.Text = "Mobile";
             mobileLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // textBox3
+            // homeTextBox
             // 
-            textBox3.Location = new Point(100, 252);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(276, 23);
-            textBox3.TabIndex = 11;
+            homeTextBox.Location = new Point(100, 252);
+            homeTextBox.MaxLength = 20;
+            homeTextBox.Name = "homeTextBox";
+            homeTextBox.Size = new Size(276, 23);
+            homeTextBox.TabIndex = 11;
             // 
             // homeLabel
             // 
@@ -182,7 +193,7 @@
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new Point(179, 229);
+            phoneLabel.Location = new Point(178, 234);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new Size(93, 15);
             phoneLabel.TabIndex = 16;
@@ -190,25 +201,55 @@
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(136, 389);
+            saveButton.Location = new Point(125, 480);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(172, 41);
             saveButton.TabIndex = 17;
             saveButton.Text = "Save";
             saveButton.UseVisualStyleBackColor = true;
             // 
+            // tagLabel
+            // 
+            tagLabel.AccessibleDescription = "";
+            tagLabel.Location = new Point(41, 427);
+            tagLabel.Name = "tagLabel";
+            tagLabel.Size = new Size(50, 15);
+            tagLabel.TabIndex = 18;
+            tagLabel.Text = "Tags";
+            tagLabel.TextAlign = ContentAlignment.MiddleRight;
+            tagLabel.Click += label1_Click;
+            // 
+            // tagTextBox
+            // 
+            tagTextBox.Location = new Point(100, 424);
+            tagTextBox.Name = "tagTextBox";
+            tagTextBox.Size = new Size(276, 23);
+            tagTextBox.TabIndex = 19;
+            // 
+            // tagInfoTextBox
+            // 
+            tagInfoTextBox.AutoSize = true;
+            tagInfoTextBox.Location = new Point(161, 450);
+            tagInfoTextBox.Name = "tagInfoTextBox";
+            tagInfoTextBox.Size = new Size(110, 15);
+            tagInfoTextBox.TabIndex = 20;
+            tagInfoTextBox.Text = "(comma separated)";
+            // 
             // EditEntryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(436, 455);
+            ClientSize = new Size(436, 530);
+            Controls.Add(tagInfoTextBox);
+            Controls.Add(tagTextBox);
+            Controls.Add(tagLabel);
             Controls.Add(saveButton);
             Controls.Add(phoneLabel);
-            Controls.Add(textBox1);
+            Controls.Add(workTextBox);
             Controls.Add(workLabel);
-            Controls.Add(textBox2);
+            Controls.Add(mobileTextBox);
             Controls.Add(mobileLabel);
-            Controls.Add(textBox3);
+            Controls.Add(homeTextBox);
             Controls.Add(homeLabel);
             Controls.Add(zipcodeTextBox);
             Controls.Add(zipcodeLabel);
@@ -238,13 +279,16 @@
         private ComboBox stateComboBox;
         private Label zipcodeLabel;
         private TextBox zipcodeTextBox;
-        private TextBox textBox1;
+        private TextBox workTextBox;
         private Label workLabel;
-        private TextBox textBox2;
+        private TextBox mobileTextBox;
         private Label mobileLabel;
-        private TextBox textBox3;
+        private TextBox homeTextBox;
         private Label homeLabel;
         private Label phoneLabel;
         private Button saveButton;
+        private Label tagLabel;
+        private TextBox tagTextBox;
+        private Label tagInfoTextBox;
     }
 }

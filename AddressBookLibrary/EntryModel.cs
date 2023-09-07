@@ -9,6 +9,11 @@ namespace AddressBookLibrary
     public class EntryModel
     {
         /// <summary>
+        /// Unique identifier of the entry.
+        /// </summary>
+        public int id { get; set; }
+
+        /// <summary>
         /// Represents who this address entry belongs to.
         /// </summary>
         public string Name { get; set; }
