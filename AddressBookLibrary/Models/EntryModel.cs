@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBookLibrary
+namespace AddressBookLibrary.Models
 {
     public class EntryModel
     {

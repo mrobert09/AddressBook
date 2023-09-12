@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AddressBookLibrary.DataAccess;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -18,6 +20,11 @@ namespace AddressBookLibrary
                 SqlConnector sql = new SqlConnector();
                 Connections.Add(sql);
             }
+        }
+
+        public static string ConnString(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }

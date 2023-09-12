@@ -6,7 +6,7 @@ using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBookLibrary
+namespace AddressBookLibrary.Models
 {
     public class PhoneNumberModel
     {

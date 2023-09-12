@@ -181,6 +181,7 @@
             homeValue.Name = "homeValue";
             homeValue.Size = new Size(276, 23);
             homeValue.TabIndex = 11;
+            homeValue.TextChanged += homeValue_TextChanged;
             // 
             // homeLabel
             // 

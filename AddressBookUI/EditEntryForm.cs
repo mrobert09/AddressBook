@@ -1,4 +1,6 @@
 ﻿using AddressBookLibrary;
+using AddressBookLibrary.DataAccess;
+using AddressBookLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +45,8 @@ namespace AddressBookUI
                 {
                     db.SaveEntry(entry);
                 }
-            } else
+            }
+            else
             {
 
             }
@@ -84,6 +87,11 @@ namespace AddressBookUI
             }
 
             return phoneNumbers;
+        }
+
+        private void homeValue_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
