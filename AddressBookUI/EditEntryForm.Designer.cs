@@ -28,270 +28,321 @@
         /// </summary>
         private void InitializeComponent()
         {
-            nameLabel = new Label();
-            nameValue = new TextBox();
-            streetValue = new TextBox();
-            streetLabel = new Label();
-            cityValue = new TextBox();
-            cityLabel = new Label();
-            stateLabel = new Label();
-            stateValue = new ComboBox();
-            zipcodeLabel = new Label();
-            zipcodeValue = new TextBox();
-            workValue = new TextBox();
-            workLabel = new Label();
-            mobileValue = new TextBox();
-            mobileLabel = new Label();
-            homeValue = new TextBox();
-            homeLabel = new Label();
-            phoneLabel = new Label();
-            saveButton = new Button();
-            tagLabel = new Label();
-            tagValue = new TextBox();
-            tagInfoTextBox = new Label();
-            SuspendLayout();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.StreetLabel = new System.Windows.Forms.Label();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.StateLabel = new System.Windows.Forms.Label();
+            this.ZipLabel = new System.Windows.Forms.Label();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.StreetTextBox = new System.Windows.Forms.TextBox();
+            this.CityTextBox = new System.Windows.Forms.TextBox();
+            this.StateComboBox = new System.Windows.Forms.ComboBox();
+            this.ZipTextBox = new System.Windows.Forms.TextBox();
+            this.HomeLabel = new System.Windows.Forms.Label();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.HomeTextBox = new System.Windows.Forms.TextBox();
+            this.PhoneLabel = new System.Windows.Forms.Label();
+            this.MobileTextBox = new System.Windows.Forms.TextBox();
+            this.MobileLabel = new System.Windows.Forms.Label();
+            this.WorkTextBox = new System.Windows.Forms.TextBox();
+            this.WorkLabel = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TagLabel = new System.Windows.Forms.Label();
+            this.TagInfoLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
-            // nameLabel
+            // SaveButton
             // 
-            nameLabel.Location = new Point(41, 31);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(50, 15);
-            nameLabel.TabIndex = 0;
-            nameLabel.Text = "Name";
-            nameLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.SaveButton.Location = new System.Drawing.Point(126, 441);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 32);
+            this.SaveButton.TabIndex = 0;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
             // 
-            // nameValue
+            // NameLabel
             // 
-            nameValue.Location = new Point(100, 28);
-            nameValue.MaxLength = 50;
-            nameValue.Name = "nameValue";
-            nameValue.Size = new Size(276, 23);
-            nameValue.TabIndex = 1;
-            nameValue.TextChanged += nameValue_TextChanged;
+            this.NameLabel.Location = new System.Drawing.Point(18, 27);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(50, 18);
+            this.NameLabel.TabIndex = 1;
+            this.NameLabel.Text = "Name";
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // streetValue
+            // StreetLabel
             // 
-            streetValue.Location = new Point(100, 71);
-            streetValue.MaxLength = 50;
-            streetValue.Name = "streetValue";
-            streetValue.Size = new Size(276, 23);
-            streetValue.TabIndex = 3;
+            this.StreetLabel.Location = new System.Drawing.Point(18, 95);
+            this.StreetLabel.Name = "StreetLabel";
+            this.StreetLabel.Size = new System.Drawing.Size(50, 18);
+            this.StreetLabel.TabIndex = 2;
+            this.StreetLabel.Text = "Street";
+            this.StreetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // streetLabel
+            // CityLabel
             // 
-            streetLabel.Location = new Point(41, 74);
-            streetLabel.Name = "streetLabel";
-            streetLabel.Size = new Size(50, 15);
-            streetLabel.TabIndex = 2;
-            streetLabel.Text = "Street";
-            streetLabel.TextAlign = ContentAlignment.MiddleRight;
-            streetLabel.Click += label2_Click;
+            this.CityLabel.Location = new System.Drawing.Point(18, 127);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(50, 18);
+            this.CityLabel.TabIndex = 3;
+            this.CityLabel.Text = "City";
+            this.CityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cityValue
+            // StateLabel
             // 
-            cityValue.Location = new Point(100, 115);
-            cityValue.MaxLength = 50;
-            cityValue.Name = "cityValue";
-            cityValue.Size = new Size(276, 23);
-            cityValue.TabIndex = 5;
+            this.StateLabel.Location = new System.Drawing.Point(18, 159);
+            this.StateLabel.Name = "StateLabel";
+            this.StateLabel.Size = new System.Drawing.Size(50, 18);
+            this.StateLabel.TabIndex = 4;
+            this.StateLabel.Text = "State";
+            this.StateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cityLabel
+            // ZipLabel
             // 
-            cityLabel.Location = new Point(41, 118);
-            cityLabel.Name = "cityLabel";
-            cityLabel.Size = new Size(50, 15);
-            cityLabel.TabIndex = 4;
-            cityLabel.Text = "City";
-            cityLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.ZipLabel.Location = new System.Drawing.Point(135, 159);
+            this.ZipLabel.Name = "ZipLabel";
+            this.ZipLabel.Size = new System.Drawing.Size(50, 18);
+            this.ZipLabel.TabIndex = 5;
+            this.ZipLabel.Text = "Zip";
+            this.ZipLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // stateLabel
+            // NameTextBox
             // 
-            stateLabel.Location = new Point(41, 163);
-            stateLabel.Name = "stateLabel";
-            stateLabel.Size = new Size(50, 15);
-            stateLabel.TabIndex = 6;
-            stateLabel.Text = "State";
-            stateLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.NameTextBox.Location = new System.Drawing.Point(74, 24);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(203, 26);
+            this.NameTextBox.TabIndex = 6;
             // 
-            // stateValue
+            // StreetTextBox
             // 
-            stateValue.FormattingEnabled = true;
-            stateValue.Items.AddRange(new object[] { "AL", "AK", "AZ", "AR", "AS", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY" });
-            stateValue.Location = new Point(100, 160);
-            stateValue.MaxLength = 2;
-            stateValue.Name = "stateValue";
-            stateValue.Size = new Size(59, 23);
-            stateValue.TabIndex = 7;
+            this.StreetTextBox.Location = new System.Drawing.Point(74, 92);
+            this.StreetTextBox.Name = "StreetTextBox";
+            this.StreetTextBox.Size = new System.Drawing.Size(203, 26);
+            this.StreetTextBox.TabIndex = 7;
             // 
-            // zipcodeLabel
+            // CityTextBox
             // 
-            zipcodeLabel.Location = new Point(211, 163);
-            zipcodeLabel.Name = "zipcodeLabel";
-            zipcodeLabel.Size = new Size(50, 15);
-            zipcodeLabel.TabIndex = 8;
-            zipcodeLabel.Text = "Zipcode";
-            zipcodeLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.CityTextBox.Location = new System.Drawing.Point(74, 124);
+            this.CityTextBox.Name = "CityTextBox";
+            this.CityTextBox.Size = new System.Drawing.Size(203, 26);
+            this.CityTextBox.TabIndex = 8;
             // 
-            // zipcodeValue
+            // StateComboBox
             // 
-            zipcodeValue.Location = new Point(267, 160);
-            zipcodeValue.MaxLength = 10;
-            zipcodeValue.Name = "zipcodeValue";
-            zipcodeValue.Size = new Size(109, 23);
-            zipcodeValue.TabIndex = 9;
+            this.StateComboBox.FormattingEnabled = true;
+            this.StateComboBox.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
+            this.StateComboBox.Location = new System.Drawing.Point(74, 156);
+            this.StateComboBox.Name = "StateComboBox";
+            this.StateComboBox.Size = new System.Drawing.Size(55, 26);
+            this.StateComboBox.TabIndex = 9;
             // 
-            // workValue
+            // ZipTextBox
             // 
-            workValue.Location = new Point(100, 339);
-            workValue.MaxLength = 20;
-            workValue.Name = "workValue";
-            workValue.Size = new Size(276, 23);
-            workValue.TabIndex = 15;
+            this.ZipTextBox.Location = new System.Drawing.Point(191, 156);
+            this.ZipTextBox.Name = "ZipTextBox";
+            this.ZipTextBox.Size = new System.Drawing.Size(86, 26);
+            this.ZipTextBox.TabIndex = 10;
             // 
-            // workLabel
+            // HomeLabel
             // 
-            workLabel.Location = new Point(41, 342);
-            workLabel.Name = "workLabel";
-            workLabel.Size = new Size(50, 15);
-            workLabel.TabIndex = 14;
-            workLabel.Text = "Work";
-            workLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.HomeLabel.Location = new System.Drawing.Point(18, 240);
+            this.HomeLabel.Name = "HomeLabel";
+            this.HomeLabel.Size = new System.Drawing.Size(50, 18);
+            this.HomeLabel.TabIndex = 11;
+            this.HomeLabel.Text = "Home";
+            this.HomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // mobileValue
+            // AddressLabel
             // 
-            mobileValue.Location = new Point(100, 295);
-            mobileValue.MaxLength = 20;
-            mobileValue.Name = "mobileValue";
-            mobileValue.Size = new Size(276, 23);
-            mobileValue.TabIndex = 13;
+            this.AddressLabel.Location = new System.Drawing.Point(123, 71);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(78, 18);
+            this.AddressLabel.TabIndex = 12;
+            this.AddressLabel.Text = "Address";
+            this.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mobileLabel
+            // HomeTextBox
             // 
-            mobileLabel.Location = new Point(41, 298);
-            mobileLabel.Name = "mobileLabel";
-            mobileLabel.Size = new Size(50, 15);
-            mobileLabel.TabIndex = 12;
-            mobileLabel.Text = "Mobile";
-            mobileLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.HomeTextBox.Location = new System.Drawing.Point(74, 237);
+            this.HomeTextBox.Name = "HomeTextBox";
+            this.HomeTextBox.Size = new System.Drawing.Size(203, 26);
+            this.HomeTextBox.TabIndex = 13;
             // 
-            // homeValue
+            // PhoneLabel
             // 
-            homeValue.Location = new Point(100, 252);
-            homeValue.MaxLength = 20;
-            homeValue.Name = "homeValue";
-            homeValue.Size = new Size(276, 23);
-            homeValue.TabIndex = 11;
-            homeValue.TextChanged += homeValue_TextChanged;
+            this.PhoneLabel.Location = new System.Drawing.Point(123, 216);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(78, 18);
+            this.PhoneLabel.TabIndex = 14;
+            this.PhoneLabel.Text = "Phone";
+            this.PhoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // homeLabel
+            // MobileTextBox
             // 
-            homeLabel.Location = new Point(41, 255);
-            homeLabel.Name = "homeLabel";
-            homeLabel.Size = new Size(50, 15);
-            homeLabel.TabIndex = 10;
-            homeLabel.Text = "Home";
-            homeLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.MobileTextBox.Location = new System.Drawing.Point(74, 269);
+            this.MobileTextBox.Name = "MobileTextBox";
+            this.MobileTextBox.Size = new System.Drawing.Size(203, 26);
+            this.MobileTextBox.TabIndex = 16;
             // 
-            // phoneLabel
+            // MobileLabel
             // 
-            phoneLabel.AutoSize = true;
-            phoneLabel.Location = new Point(178, 234);
-            phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new Size(93, 15);
-            phoneLabel.TabIndex = 16;
-            phoneLabel.Text = "Phone Numbers";
+            this.MobileLabel.Location = new System.Drawing.Point(12, 272);
+            this.MobileLabel.Name = "MobileLabel";
+            this.MobileLabel.Size = new System.Drawing.Size(56, 18);
+            this.MobileLabel.TabIndex = 15;
+            this.MobileLabel.Text = "Mobile";
+            this.MobileLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // saveButton
+            // WorkTextBox
             // 
-            saveButton.Location = new Point(125, 480);
-            saveButton.Name = "saveButton";
-            saveButton.Size = new Size(172, 41);
-            saveButton.TabIndex = 17;
-            saveButton.Text = "Save";
-            saveButton.UseVisualStyleBackColor = true;
-            saveButton.Click += saveButton_Click;
+            this.WorkTextBox.Location = new System.Drawing.Point(74, 301);
+            this.WorkTextBox.Name = "WorkTextBox";
+            this.WorkTextBox.Size = new System.Drawing.Size(203, 26);
+            this.WorkTextBox.TabIndex = 18;
             // 
-            // tagLabel
+            // WorkLabel
             // 
-            tagLabel.AccessibleDescription = "";
-            tagLabel.Location = new Point(41, 427);
-            tagLabel.Name = "tagLabel";
-            tagLabel.Size = new Size(50, 15);
-            tagLabel.TabIndex = 18;
-            tagLabel.Text = "Tags";
-            tagLabel.TextAlign = ContentAlignment.MiddleRight;
-            tagLabel.Click += label1_Click;
+            this.WorkLabel.Location = new System.Drawing.Point(18, 304);
+            this.WorkLabel.Name = "WorkLabel";
+            this.WorkLabel.Size = new System.Drawing.Size(50, 18);
+            this.WorkLabel.TabIndex = 17;
+            this.WorkLabel.Text = "Work";
+            this.WorkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tagValue
+            // textBox3
             // 
-            tagValue.Location = new Point(100, 424);
-            tagValue.Name = "tagValue";
-            tagValue.Size = new Size(276, 23);
-            tagValue.TabIndex = 19;
+            this.textBox3.Location = new System.Drawing.Point(74, 370);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(203, 26);
+            this.textBox3.TabIndex = 20;
             // 
-            // tagInfoTextBox
+            // TagLabel
             // 
-            tagInfoTextBox.AutoSize = true;
-            tagInfoTextBox.Location = new Point(161, 450);
-            tagInfoTextBox.Name = "tagInfoTextBox";
-            tagInfoTextBox.Size = new Size(110, 15);
-            tagInfoTextBox.TabIndex = 20;
-            tagInfoTextBox.Text = "(comma separated)";
+            this.TagLabel.Location = new System.Drawing.Point(18, 373);
+            this.TagLabel.Name = "TagLabel";
+            this.TagLabel.Size = new System.Drawing.Size(50, 18);
+            this.TagLabel.TabIndex = 19;
+            this.TagLabel.Text = "Tags";
+            this.TagLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TagInfoLabel
+            // 
+            this.TagInfoLabel.Location = new System.Drawing.Point(80, 399);
+            this.TagInfoLabel.Name = "TagInfoLabel";
+            this.TagInfoLabel.Size = new System.Drawing.Size(174, 18);
+            this.TagInfoLabel.TabIndex = 21;
+            this.TagInfoLabel.Text = "(comma separated)";
+            this.TagInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EditEntryForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(436, 530);
-            Controls.Add(tagInfoTextBox);
-            Controls.Add(tagValue);
-            Controls.Add(tagLabel);
-            Controls.Add(saveButton);
-            Controls.Add(phoneLabel);
-            Controls.Add(workValue);
-            Controls.Add(workLabel);
-            Controls.Add(mobileValue);
-            Controls.Add(mobileLabel);
-            Controls.Add(homeValue);
-            Controls.Add(homeLabel);
-            Controls.Add(zipcodeValue);
-            Controls.Add(zipcodeLabel);
-            Controls.Add(stateValue);
-            Controls.Add(stateLabel);
-            Controls.Add(cityValue);
-            Controls.Add(cityLabel);
-            Controls.Add(streetValue);
-            Controls.Add(streetLabel);
-            Controls.Add(nameValue);
-            Controls.Add(nameLabel);
-            Name = "EditEntryForm";
-            Text = "Entry Form";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(328, 486);
+            this.Controls.Add(this.TagInfoLabel);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TagLabel);
+            this.Controls.Add(this.WorkTextBox);
+            this.Controls.Add(this.WorkLabel);
+            this.Controls.Add(this.MobileTextBox);
+            this.Controls.Add(this.MobileLabel);
+            this.Controls.Add(this.PhoneLabel);
+            this.Controls.Add(this.HomeTextBox);
+            this.Controls.Add(this.AddressLabel);
+            this.Controls.Add(this.HomeLabel);
+            this.Controls.Add(this.ZipTextBox);
+            this.Controls.Add(this.StateComboBox);
+            this.Controls.Add(this.CityTextBox);
+            this.Controls.Add(this.StreetTextBox);
+            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.ZipLabel);
+            this.Controls.Add(this.StateLabel);
+            this.Controls.Add(this.CityLabel);
+            this.Controls.Add(this.StreetLabel);
+            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.SaveButton);
+            this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "EditEntryForm";
+            this.Text = "Edit Entry";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
-        private Label nameLabel;
-        private TextBox nameValue;
-        private TextBox streetValue;
-        private Label streetLabel;
-        private TextBox cityValue;
-        private Label cityLabel;
-        private Label stateLabel;
-        private ComboBox stateValue;
-        private Label zipcodeLabel;
-        private TextBox zipcodeValue;
-        private TextBox workValue;
-        private Label workLabel;
-        private TextBox mobileValue;
-        private Label mobileLabel;
-        private TextBox homeValue;
-        private Label homeLabel;
-        private Label phoneLabel;
-        private Button saveButton;
-        private Label tagLabel;
-        private TextBox tagValue;
-        private Label tagInfoTextBox;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label StreetLabel;
+        private System.Windows.Forms.Label CityLabel;
+        private System.Windows.Forms.Label StateLabel;
+        private System.Windows.Forms.Label ZipLabel;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.TextBox StreetTextBox;
+        private System.Windows.Forms.TextBox CityTextBox;
+        private System.Windows.Forms.ComboBox StateComboBox;
+        private System.Windows.Forms.TextBox ZipTextBox;
+        private System.Windows.Forms.Label HomeLabel;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.TextBox HomeTextBox;
+        private System.Windows.Forms.Label PhoneLabel;
+        private System.Windows.Forms.TextBox MobileTextBox;
+        private System.Windows.Forms.Label MobileLabel;
+        private System.Windows.Forms.TextBox WorkTextBox;
+        private System.Windows.Forms.Label WorkLabel;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label TagLabel;
+        private System.Windows.Forms.Label TagInfoLabel;
     }
 }
