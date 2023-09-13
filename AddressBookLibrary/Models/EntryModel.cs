@@ -27,5 +27,17 @@ namespace AddressBookLibrary.Models
         /// A list of all phone numbers associated with this entry.
         /// </summary>
         public List<PhoneNumberModel> PhoneNumbers { get; set; } = new List<PhoneNumberModel>();
+
+        public EntryModel()
+        {
+
+        }
+
+        public EntryModel(string name, AddressModel address, List<PhoneNumberModel> phoneNumbers)
+        {
+            Name = name;
+            Address = address;
+            PhoneNumbers = phoneNumbers;
+        }
     }
 }

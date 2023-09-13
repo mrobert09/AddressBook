@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddressBookLibrary\AddressBookLibrary.csproj">
+      <Project>{13a2de29-77f1-4a77-b69d-3222c3be362e}</Project>
+      <Name>AddressBookLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
