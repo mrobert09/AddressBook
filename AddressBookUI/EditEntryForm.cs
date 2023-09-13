@@ -31,10 +31,10 @@ namespace AddressBookUI
                 entry.Address = new AddressModel(StreetTextBox.Text, CityTextBox.Text, StateComboBox.Text, ZipTextBox.Text);
                 entry.PhoneNumbers = ParsePhoneNumbers();
 
-                //foreach (IDataConnection db in GlobalConfig.Connections)
-                //{
-                //    db.SaveEntry(entry);
-                //}
+                foreach (IDataConnection db in GlobalConfig.Connections)
+                {
+                    db.SaveEntry(entry);
+                }
             }
             else
             {

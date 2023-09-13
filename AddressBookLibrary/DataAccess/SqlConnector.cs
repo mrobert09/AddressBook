@@ -17,11 +17,11 @@ namespace AddressBookLibrary.DataAccess
             {
                 var p = new DynamicParameters();
                 p.Add("@name", entry.Name);
-                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+                p.Add("@personID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
                 connection.Execute("dbo.spPerson_Insert", p, commandType: CommandType.StoredProcedure);
 
-                entry.id = p.Get<int>("@id");
+                entry.id = p.Get<int>("@personID");
 
                 return entry;
             }
