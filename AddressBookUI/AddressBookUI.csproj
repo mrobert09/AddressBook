@@ -52,8 +52,17 @@
     <Compile Include="EditEntryForm.Designer.cs">
       <DependentUpon>EditEntryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddressBookViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddressBookViewer.Designer.cs">
+      <DependentUpon>AddressBookViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddressBookViewer.resx">
+      <DependentUpon>AddressBookViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditEntryForm.resx">
       <DependentUpon>EditEntryForm.cs</DependentUpon>
     </EmbeddedResource>
