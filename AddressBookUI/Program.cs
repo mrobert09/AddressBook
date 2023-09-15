@@ -20,7 +20,7 @@ namespace AddressBookUI
             // Initialize database connection
             AddressBookLibrary.GlobalConfig.InitializeConnections(true);
 
-            Application.Run(new EditEntryForm());
+            Application.Run(new AddressBookViewer());
         }
     }
 }

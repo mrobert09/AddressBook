@@ -25,16 +25,15 @@ namespace AddressBookUI
         {
             if (ValidateForm())
             {
-                EntryModel entry = new EntryModel();
-
-                entry.Name = NameTextBox.Text;
-                entry.Address = new AddressModel(StreetTextBox.Text, CityTextBox.Text, StateComboBox.Text, ZipTextBox.Text);
-                entry.PhoneNumbers = ParsePhoneNumbers();
-
-                foreach (IDataConnection db in GlobalConfig.Connections)
+                EntryModel entry = new EntryModel
                 {
-                    db.SaveEntry(entry);
-                }
+                    Name = NameTextBox.Text,
+                    Address = new AddressModel(StreetTextBox.Text, CityTextBox.Text, StateComboBox.Text, ZipTextBox.Text),
+                    PhoneNumbers = ParsePhoneNumbers()
+                };
+
+                GlobalConfig.Connection.SaveEntry(entry);
+
             }
             else
             {

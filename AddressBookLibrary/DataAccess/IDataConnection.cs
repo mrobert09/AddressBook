@@ -10,5 +10,7 @@ namespace AddressBookLibrary.DataAccess
     public interface IDataConnection
     {
         EntryModel SaveEntry(EntryModel entry);
+
+        List<String> GetEntries();
     }
 }

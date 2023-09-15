@@ -26,5 +26,17 @@ namespace AddressBookLibrary.DataAccess
                 return entry;
             }
         }
+
+        public List<String> GetEntries()
+        {
+            List<String> output = new List<String>();
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
+            {
+                output = connection.Query<String>("dbo.spPerson_GetAll").ToList();
+            }
+
+            return output;
+        }
     }
 }
