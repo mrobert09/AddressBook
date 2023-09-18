@@ -16,9 +16,24 @@ namespace AddressBookUI
 {
     public partial class EditEntryForm : Form
     {
+        public string passedName;  // receives name from AddressBookViewer
+
         public EditEntryForm()
         {
             InitializeComponent();
+        }
+
+        private void EditEntryForm_Load(object sender, EventArgs e)
+        {
+            NameTextBox.Text = passedName;
+            var variables = GlobalConfig.Connection.GetAddress(passedName);
+            if (variables != null)
+            {
+                StreetTextBox.Text = variables.street;
+                CityTextBox.Text = variables.city;
+                StateComboBox.Text = variables.state;
+                ZipTextBox.Text = variables.zip;
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

@@ -316,6 +316,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditEntryForm";
             this.Text = "Edit Entry";
+            this.Load += new System.EventHandler(this.EditEntryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

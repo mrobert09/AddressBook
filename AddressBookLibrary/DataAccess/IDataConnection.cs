@@ -12,5 +12,7 @@ namespace AddressBookLibrary.DataAccess
         EntryModel SaveEntry(EntryModel entry);
 
         List<String> GetEntries();
+
+        dynamic GetAddress(string name);
     }
 }

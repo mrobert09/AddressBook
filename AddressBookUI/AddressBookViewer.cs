@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Text;
 
 namespace AddressBookUI
 {
@@ -17,7 +18,9 @@ namespace AddressBookUI
         public AddressBookViewer()
         {
             InitializeComponent();
-
+        }
+        private void AddressBookViewer_Load(object sender, EventArgs e)
+        {
             List<String> names = GlobalConfig.Connection.GetEntries();
 
             foreach (string name in names)
@@ -28,7 +31,15 @@ namespace AddressBookUI
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-
+            if (AddressListBox.SelectedItems.Count != 1)
+            {
+                return;
+            } else
+            {
+                EditEntryForm editEntryForm = new EditEntryForm();
+                editEntryForm.passedName = AddressListBox.SelectedItems[0].ToString();
+                editEntryForm.ShowDialog();
+            }
         }
     }
 }

@@ -101,6 +101,7 @@
             this.Controls.Add(this.NewButton);
             this.Name = "AddressBookViewer";
             this.Text = "Address Book";
+            this.Load += new System.EventHandler(this.AddressBookViewer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
