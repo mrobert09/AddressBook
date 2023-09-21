@@ -30,6 +30,15 @@ namespace AddressBookUI
             }
         }
 
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            EditEntryForm editEntryForm = new EditEntryForm
+            {
+                passedName = ""
+            };
+            editEntryForm.ShowDialog();
+        }
+
         private void EditButton_Click(object sender, EventArgs e)
         {
             if (AddressListBox.SelectedItems.Count != 1)
@@ -37,8 +46,10 @@ namespace AddressBookUI
                 return;
             } else
             {
-                EditEntryForm editEntryForm = new EditEntryForm();
-                editEntryForm.passedName = AddressListBox.SelectedItems[0].ToString();
+                EditEntryForm editEntryForm = new EditEntryForm
+                {
+                    passedName = AddressListBox.SelectedItems[0].ToString()
+                };
                 editEntryForm.ShowDialog();
             }
         }
