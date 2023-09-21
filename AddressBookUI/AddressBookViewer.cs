@@ -21,6 +21,7 @@ namespace AddressBookUI
         }
         private void AddressBookViewer_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = AddressListBox;
             List<String> names = GlobalConfig.Connection.GetEntries();
 
             foreach (string name in names)

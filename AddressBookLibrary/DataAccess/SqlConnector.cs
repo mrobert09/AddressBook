@@ -50,5 +50,17 @@ namespace AddressBookLibrary.DataAccess
                 if (output.Length > 0) { return output[0]; } else {  return null; }
             }
         }
+
+        public dynamic GetPhoneNumbers(string name)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
+            {
+                var p = new DynamicParameters();
+                p.Add("name", name);
+
+                var output = connection.Query("dbo.spPerson_GetPhoneNumbers", p, commandType: CommandType.StoredProcedure).ToArray();
+                if (output.Length > 0) { return output; } else { return null; }
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@
             // 
             // NewButton
             // 
-            this.NewButton.Location = new System.Drawing.Point(419, 30);
+            this.NewButton.Location = new System.Drawing.Point(240, 29);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(75, 32);
             this.NewButton.TabIndex = 1;
@@ -50,12 +50,12 @@
             this.AddressListBox.FormattingEnabled = true;
             this.AddressListBox.Location = new System.Drawing.Point(12, 30);
             this.AddressListBox.Name = "AddressListBox";
-            this.AddressListBox.Size = new System.Drawing.Size(401, 264);
+            this.AddressListBox.Size = new System.Drawing.Size(222, 264);
             this.AddressListBox.TabIndex = 2;
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(419, 68);
+            this.EditButton.Location = new System.Drawing.Point(240, 67);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 32);
             this.EditButton.TabIndex = 3;
@@ -65,7 +65,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(419, 106);
+            this.DeleteButton.Location = new System.Drawing.Point(240, 105);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 32);
             this.DeleteButton.TabIndex = 4;
@@ -85,14 +85,14 @@
             // 
             this.SearchTextBox.Location = new System.Drawing.Point(68, 9);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(293, 20);
+            this.SearchTextBox.Size = new System.Drawing.Size(166, 20);
             this.SearchTextBox.TabIndex = 8;
             // 
             // AddressBookViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 312);
+            this.ClientSize = new System.Drawing.Size(324, 312);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.DeleteButton);

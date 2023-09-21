@@ -14,5 +14,7 @@ namespace AddressBookLibrary.DataAccess
         List<String> GetEntries();
 
         dynamic GetAddress(string name);
+
+        dynamic GetPhoneNumbers(string name);
     }
 }

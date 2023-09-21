@@ -25,14 +25,31 @@ namespace AddressBookUI
 
         private void EditEntryForm_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = NameTextBox;
             NameTextBox.Text = passedName;
-            var variables = GlobalConfig.Connection.GetAddress(passedName);
-            if (variables != null)
+            NameTextBox.SelectionStart = NameTextBox.Text.Length;
+
+            // Autopopulate known address info
+            var addressInfo = GlobalConfig.Connection.GetAddress(passedName);
+            if (addressInfo != null)
             {
-                StreetTextBox.Text = variables.street;
-                CityTextBox.Text = variables.city;
-                StateComboBox.Text = variables.state;
-                ZipTextBox.Text = variables.zip;
+                StreetTextBox.Text = addressInfo.street;
+                CityTextBox.Text = addressInfo.city;
+                StateComboBox.Text = addressInfo.state;
+                ZipTextBox.Text = addressInfo.zip;
+            }
+
+            // Autopopulate known phone info
+            var phoneInfo = GlobalConfig.Connection.GetPhoneNumbers(passedName);
+            if (phoneInfo != null)
+            {
+                foreach (var number in phoneInfo)
+                {
+                    Console.WriteLine(number);
+                    if (number.phoneType == 1) { HomeTextBox.Text = number.phoneNumber; } 
+                    else if (number.phoneType == 2) {MobileTextBox.Text = number.phoneNumber; }
+                    else if (number.phoneType == 3) { WorkTextBox.Text = number.phoneNumber; }
+                }
             }
         }
 
