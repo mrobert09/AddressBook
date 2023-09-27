@@ -28,11 +28,20 @@ namespace AddressBookLibrary.Models
         /// </summary>
         public List<PhoneNumberModel> PhoneNumbers { get; set; } = new List<PhoneNumberModel>();
 
+        /// <summary>
+        /// Empty constructor.
+        /// </summary>
         public EntryModel()
         {
 
         }
 
+        /// <summary>
+        /// Constructor with provided parameters.
+        /// </summary>
+        /// <param name="name">String</param>
+        /// <param name="address">AddressModel</param>
+        /// <param name="phoneNumbers">List<PhoneNumberModel></param>
         public EntryModel(string name, AddressModel address, List<PhoneNumberModel> phoneNumbers)
         {
             Name = name;

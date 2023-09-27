@@ -11,6 +11,11 @@ namespace AddressBookLibrary.DataAccess
 {
     public class SqlConnector : IDataConnection
     {
+        /// <summary>
+        /// Method that runs when Save button gets clicked. Inserts a name into the database and returns the ID the entry object with ID information.
+        /// </summary>
+        /// <param name="entry">Entry Object w/o ID</param>
+        /// <returns>Entry Object w/ ID</returns>
         public EntryModel SaveEntry(EntryModel entry)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
@@ -27,6 +32,10 @@ namespace AddressBookLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Fetches all names from the database.
+        /// </summary>
+        /// <returns>List of strings</returns>
         public List<String> GetEntries()
         {
             List<String> output = new List<String>();
@@ -40,6 +49,11 @@ namespace AddressBookLibrary.DataAccess
         }
 
 
+        /// <summary>
+        /// Fetches address information of an entry.
+        /// </summary>
+        /// <param name="name">String name of person to fetch</param>
+        /// <returns>Returns array of address information. If name not found, return null.</returns>
         public dynamic GetAddress(string name) {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
             {
@@ -51,6 +65,11 @@ namespace AddressBookLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Fetches phone information of an entry.
+        /// </summary>
+        /// <param name="name">String name of person to fetch</param>
+        /// <returns>Returns array of phone information. If name not found, return null.</returns>
         public dynamic GetPhoneNumbers(string name)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))

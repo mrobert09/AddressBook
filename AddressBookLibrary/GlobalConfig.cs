@@ -12,6 +12,11 @@ namespace AddressBookLibrary
     public static class GlobalConfig
     {
         public static IDataConnection Connection { get; private set; }
+
+        /// <summary>
+        /// Creates the initial connector information. Currently only supports a database.
+        /// </summary>
+        /// <param name="database">True if using database, flase if not.</param>
         public static void InitializeConnections(bool database)
         {
             if (database)
@@ -21,6 +26,11 @@ namespace AddressBookLibrary
             }
         }
 
+        /// <summary>
+        /// Fetches the connection string information.
+        /// </summary>
+        /// <param name="name">String name of database.</param>
+        /// <returns>String</returns>
         public static string ConnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;

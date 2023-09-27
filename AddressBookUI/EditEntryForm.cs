@@ -23,6 +23,11 @@ namespace AddressBookUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Populates the edit UI with information upon loading.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditEntryForm_Load(object sender, EventArgs e)
         {
             this.ActiveControl = NameTextBox;
@@ -53,6 +58,11 @@ namespace AddressBookUI
             }
         }
 
+        /// <summary>
+        /// Method that runs when the 'Save' button is clicked. Creates an entry object and sends it to the SaveEntry function in the connection class.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -73,6 +83,10 @@ namespace AddressBookUI
             }
         }
 
+        /// <summary>
+        /// Ensures the form has at least a name written in the NameTextBox to be a valid entry.
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateForm()
         {
             bool output = true;
@@ -86,6 +100,10 @@ namespace AddressBookUI
         }
 
 
+        /// <summary>
+        /// Checks each phone number box and adds them to a list of phone number models if they are present.
+        /// </summary>
+        /// <returns>List of phone number models if list has at least 1 member. Returns null of list is empty.</returns>
         private List<PhoneNumberModel> ParsePhoneNumbers()
         {
             List<PhoneNumberModel> numbers = new List<PhoneNumberModel>();

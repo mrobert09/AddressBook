@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AddressBookLibrary.DataAccess
 {
+    /// <summary>
+    /// Interface for any data connections that might exist.
+    /// </summary>
     public interface IDataConnection
     {
         EntryModel SaveEntry(EntryModel entry);
