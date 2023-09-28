@@ -74,7 +74,7 @@ namespace AddressBookUI
                     PhoneNumbers = ParsePhoneNumbers()
                 };
 
-                GlobalConfig.Connection.SaveEntry(entry);
+                GlobalConfig.Connection.SaveEntry(entry, passedName);
 
             }
             else
