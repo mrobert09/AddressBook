@@ -31,8 +31,14 @@ namespace AddressBookUI
         private void AddressBookViewer_Load(object sender, EventArgs e)
         {
             this.ActiveControl = AddressListBox;
+            RefreshList();
+        }
+
+        public void RefreshList()
+        {
             List<String> names = GlobalConfig.Connection.GetEntries();
 
+            AddressListBox.Items.Clear();
             foreach (string name in names)
             {
                 AddressListBox.Items.Add(name);
@@ -48,7 +54,10 @@ namespace AddressBookUI
         {
             EditEntryForm editEntryForm = new EditEntryForm
             {
-                passedName = ""
+                // Passes empty string to show no items were selected
+                passedName = "",
+                // Passes reference to this window to edit window
+                viewer = this
             };
             editEntryForm.ShowDialog();
         }
@@ -69,9 +78,25 @@ namespace AddressBookUI
                 EditEntryForm editEntryForm = new EditEntryForm
                 {
                     // Passes the selected item as a string to the new EditEntryForm entity
-                    passedName = AddressListBox.SelectedItems[0].ToString()
+                    passedName = AddressListBox.SelectedItems[0].ToString(),
+                    // Passes reference to this window to edit window
+                    viewer = this
                 };
                 editEntryForm.ShowDialog();
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            // Grabs selected item in AddressListBox
+            if (AddressListBox.SelectedItems.Count != 1)
+            {
+                return;
+            }
+            else
+            {
+                GlobalConfig.Connection.DeleteEntry(AddressListBox.SelectedItems[0].ToString());
+                RefreshList();
             }
         }
     }

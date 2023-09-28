@@ -17,6 +17,7 @@ namespace AddressBookUI
     public partial class EditEntryForm : Form
     {
         public string passedName;  // receives name from AddressBookViewer
+        public AddressBookViewer viewer;
 
         public EditEntryForm()
         {
@@ -75,11 +76,8 @@ namespace AddressBookUI
                 };
 
                 GlobalConfig.Connection.SaveEntry(entry, passedName);
-
-            }
-            else
-            {
-
+                viewer.RefreshList();  // refreshes the listbox in AddressBookViewer
+                this.Close();
             }
         }
 

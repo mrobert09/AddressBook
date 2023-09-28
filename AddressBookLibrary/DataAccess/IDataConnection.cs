@@ -19,5 +19,7 @@ namespace AddressBookLibrary.DataAccess
         dynamic GetAddress(string name);
 
         dynamic GetPhoneNumbers(string name);
+
+        void DeleteEntry(string name);
     }
 }

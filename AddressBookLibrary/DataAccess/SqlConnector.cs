@@ -43,8 +43,7 @@ namespace AddressBookLibrary.DataAccess
                         return null;
                     }
                 }
-                Console.WriteLine();
-                //entry.id = SaveName(entry, connection);
+                entry.id = SaveName(entry, connection);
 
                 return entry;
             }
@@ -108,6 +107,21 @@ namespace AddressBookLibrary.DataAccess
 
                 var output = connection.Query("dbo.spPerson_GetPhoneNumbers", p, commandType: CommandType.StoredProcedure).ToArray();
                 if (output.Length > 0) { return output; } else { return null; }
+            }
+        }
+
+        public void DeleteEntry(string name)
+        {
+            DialogResult choice = MessageBox.Show("Delete entry for " + name + "?", "Delete User", MessageBoxButtons.YesNo);
+            if (choice == DialogResult.Yes)
+            {
+                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
+                {
+                    var p = new DynamicParameters();
+                    p.Add("@name", name);
+
+                    connection.Execute("dbo.spPerson_DeleteName", p, commandType: CommandType.StoredProcedure);
+                }
             }
         }
     }
