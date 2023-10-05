@@ -13,6 +13,11 @@ namespace AddressBookLibrary.Models
         private string state;
         private string zip;
 
+        /// <summary>
+        /// Unique identifier of the entry.
+        /// </summary>
+        public int id { get; set; }
+
         public AddressModel()
         {
         }

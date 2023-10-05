@@ -33,7 +33,10 @@ namespace AddressBookUI
             this.ActiveControl = AddressListBox;
             RefreshList();
         }
-
+        
+        /// <summary>
+        /// Refreshes the AddressListBox entries.
+        /// </summary>
         public void RefreshList()
         {
             List<String> names = GlobalConfig.Connection.GetEntries();

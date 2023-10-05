@@ -23,6 +23,8 @@ namespace AddressBookLibrary.DataAccess
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
             {
+                // Currently debug in for knowing if new entry or editing entry
+                // Plan to add functionality for not needing to confirm duplicate names when editing
                 if (currentEntry.Length == 0)
                 {
                     Console.WriteLine("new entry");
@@ -34,21 +36,60 @@ namespace AddressBookLibrary.DataAccess
                 var p = new DynamicParameters();
                 p.Add("name", entry.Name);
 
-                if (connection.Query<int>("dbo.spPerson_CheckName", p, commandType: CommandType.StoredProcedure).First() == 1)
+                if (connection.Query<int>("dbo.spPerson_GetID", p, commandType: CommandType.StoredProcedure).First() != 0)
                 {
                     // Allow user to cancel overwriting data
                     DialogResult choice = MessageBox.Show("Name already exists. Overwrite data?", "Duplicate Name", MessageBoxButtons.YesNo);
                     if (choice == DialogResult.No)
                     {
                         return null;
+                    } else
+                    {
+                        // Finds ID of name already present in database
+                        entry.id = connection.Query<int>("dbo.spPerson_GetID", p, commandType: CommandType.StoredProcedure).First();
                     }
+                } else
+                {
+                    //entry.id = SaveName(entry, connection);
                 }
-                entry.id = SaveName(entry, connection);
+
+                p = new DynamicParameters();
+                p.Add("street", entry.Address.Street);
+                p.Add("city", entry.Address.City);
+                p.Add("state", entry.Address.State);
+                p.Add("zip", entry.Address.Zip);
+
+                if (connection.Query<int>("dbo.spAddress_GetID", p, commandType: CommandType.StoredProcedure).First() != 0)
+                {
+                    entry.Address.id = connection.Query<int>("dbo.spAddress_GetID", p, commandType: CommandType.StoredProcedure).First();
+                } else
+                {
+                    entry.Address.id = SaveAddress(entry, connection);
+                }
 
                 return entry;
             }
         }
 
+        private int SaveAddress(EntryModel entry, IDbConnection connection)
+        {
+            var p = new DynamicParameters();
+            p.Add("street", entry.Address.Street);
+            p.Add("city", entry.Address.City);
+            p.Add("state", entry.Address.State);
+            p.Add("zip", entry.Address.Zip);
+            p.Add("@addressID", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+            connection.Execute("dbo.spAddress_Insert", p, commandType: CommandType.StoredProcedure);
+            return p.Get<int>("@addressID");
+        }
+
+        /// <summary>
+        /// Saves name to database table Person.
+        /// </summary>
+        /// <param name="entry">Entry object w/o ID</param>
+        /// <param name="connection">Connection method (SQL)</param>
+        /// <returns>Person's ID from table</returns>
         private static int SaveName(EntryModel entry, IDbConnection connection)
         {
 
@@ -110,6 +151,10 @@ namespace AddressBookLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Deletes user from database. Does not delete address information or phone information from the database.
+        /// </summary>
+        /// <param name="name">String name of person to delete</param>
         public void DeleteEntry(string name)
         {
             DialogResult choice = MessageBox.Show("Delete entry for " + name + "?", "Delete User", MessageBoxButtons.YesNo);
