@@ -36,7 +36,7 @@ namespace AddressBookLibrary.DataAccess
                 var p = new DynamicParameters();
                 p.Add("name", entry.Name);
 
-                if (connection.Query<int>("dbo.spPerson_GetID", p, commandType: CommandType.StoredProcedure).First() != 0)
+                if (connection.Query<int>("dbo.spPerson_GetID", p, commandType: CommandType.StoredProcedure).ToList().Count != 0)  // if ID exists
                 {
                     // Allow user to cancel overwriting data
                     DialogResult choice = MessageBox.Show("Name already exists. Overwrite data?", "Duplicate Name", MessageBoxButtons.YesNo);
@@ -50,7 +50,7 @@ namespace AddressBookLibrary.DataAccess
                     }
                 } else
                 {
-                    //entry.id = SaveName(entry, connection);
+                    entry.id = SaveName(entry, connection);
                 }
 
                 p = new DynamicParameters();
@@ -59,7 +59,7 @@ namespace AddressBookLibrary.DataAccess
                 p.Add("state", entry.Address.State);
                 p.Add("zip", entry.Address.Zip);
 
-                if (connection.Query<int>("dbo.spAddress_GetID", p, commandType: CommandType.StoredProcedure).First() != 0)
+                if (connection.Query<int>("dbo.spAddress_GetID", p, commandType: CommandType.StoredProcedure).ToList().Count != 0)  // if ID exists
                 {
                     entry.Address.id = connection.Query<int>("dbo.spAddress_GetID", p, commandType: CommandType.StoredProcedure).First();
                 } else
@@ -67,8 +67,24 @@ namespace AddressBookLibrary.DataAccess
                     entry.Address.id = SaveAddress(entry, connection);
                 }
 
+                ConnectPersonWithAddress(entry, connection);
+
                 return entry;
             }
+        }
+
+        private void ConnectPersonWithAddress(EntryModel entry, IDbConnection connection)
+        {
+            var p = new DynamicParameters();
+            p.Add("personID", entry.id);
+            p.Add("addressID", entry.Address.id);
+
+            if (connection.Query("dbo.spPersonAddress_GetRow", p, commandType: CommandType.StoredProcedure).ToArray().Length == 0)
+            {
+                connection.Execute("dbo.spPersonAddress_DeleteRow", p, commandType: CommandType.StoredProcedure);  // deletes any current address links
+                connection.Execute("dbo.spPersonAddress_Insert", p, commandType: CommandType.StoredProcedure);  // adds new address link
+            }
+            Console.WriteLine();
         }
 
         private int SaveAddress(EntryModel entry, IDbConnection connection)
@@ -167,6 +183,14 @@ namespace AddressBookLibrary.DataAccess
 
                     connection.Execute("dbo.spPerson_DeleteName", p, commandType: CommandType.StoredProcedure);
                 }
+            }
+        }
+
+        public void DeleteUnusedData()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
+            {
+                connection.Execute("dbo.spAddress_DeleteUnused", commandType: CommandType.StoredProcedure);
             }
         }
     }

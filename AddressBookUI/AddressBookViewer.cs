@@ -39,6 +39,7 @@ namespace AddressBookUI
         /// </summary>
         public void RefreshList()
         {
+            GlobalConfig.Connection.DeleteUnusedData();
             List<String> names = GlobalConfig.Connection.GetEntries();
 
             AddressListBox.Items.Clear();
