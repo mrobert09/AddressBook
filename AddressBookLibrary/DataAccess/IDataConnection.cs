@@ -12,7 +12,7 @@ namespace AddressBookLibrary.DataAccess
     /// </summary>
     public interface IDataConnection
     {
-        EntryModel SaveEntry(EntryModel entry, string currentEntry);
+        EntryModel SaveEntry(EntryModel entry, string nameSelected);
 
         List<String> GetEntries();
 
@@ -20,7 +20,7 @@ namespace AddressBookLibrary.DataAccess
 
         dynamic GetPhoneNumbers(string name);
 
-        void DeleteEntry(string name);
+        void DeleteEntry(string name, bool confirmationBypass);
 
         void DeleteUnusedData();
     }

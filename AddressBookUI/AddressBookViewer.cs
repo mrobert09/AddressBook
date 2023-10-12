@@ -105,7 +105,7 @@ namespace AddressBookUI
             }
             else
             {
-                GlobalConfig.Connection.DeleteEntry(AddressListBox.SelectedItems[0].ToString());
+                GlobalConfig.Connection.DeleteEntry(AddressListBox.SelectedItems[0].ToString(), true);
                 RefreshList();
             }
         }
