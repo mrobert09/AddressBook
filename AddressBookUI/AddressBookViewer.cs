@@ -90,6 +90,12 @@ namespace AddressBookUI
             }
         }
 
+        /// <summary>
+        /// Method that runs when the 'Delete' button is pressed. Calls the interface method used to 
+        /// handle deleting of data and refreshes combo box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             // Grabs selected item in AddressListBox

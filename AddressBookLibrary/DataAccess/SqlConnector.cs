@@ -73,20 +73,31 @@ namespace AddressBookLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Saves data linking a Person to an Address in the PersonAddres table.
+        /// </summary>
+        /// <param name="entry">Entry object with IDs</param>
+        /// <param name="connection">Connection method (SQL)</param>
         private void ConnectPersonWithAddress(EntryModel entry, IDbConnection connection)
         {
             var p = new DynamicParameters();
             p.Add("personID", entry.id);
             p.Add("addressID", entry.Address.id);
 
+            // Confirms that the address link is not already present
             if (connection.Query("dbo.spPersonAddress_GetRow", p, commandType: CommandType.StoredProcedure).ToArray().Length == 0)
             {
                 connection.Execute("dbo.spPersonAddress_DeleteRow", p, commandType: CommandType.StoredProcedure);  // deletes any current address links
                 connection.Execute("dbo.spPersonAddress_Insert", p, commandType: CommandType.StoredProcedure);  // adds new address link
             }
-            Console.WriteLine();
         }
 
+        /// <summary>
+        /// Saves address information to database table Address.
+        /// </summary>
+        /// <param name="entry">Entry object w/o address ID</param>
+        /// <param name="connection">Connection method (SQL)</param>
+        /// <returns>Address' ID from table</returns>
         private int SaveAddress(EntryModel entry, IDbConnection connection)
         {
             var p = new DynamicParameters();
@@ -103,7 +114,7 @@ namespace AddressBookLibrary.DataAccess
         /// <summary>
         /// Saves name to database table Person.
         /// </summary>
-        /// <param name="entry">Entry object w/o ID</param>
+        /// <param name="entry">Entry object w/o person ID</param>
         /// <param name="connection">Connection method (SQL)</param>
         /// <returns>Person's ID from table</returns>
         private static int SaveName(EntryModel entry, IDbConnection connection)
@@ -186,6 +197,9 @@ namespace AddressBookLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Method used to clear database of no-longer-relevant data.
+        /// </summary>
         public void DeleteUnusedData()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
