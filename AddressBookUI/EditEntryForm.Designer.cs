@@ -47,14 +47,11 @@
             this.MobileLabel = new System.Windows.Forms.Label();
             this.WorkTextBox = new System.Windows.Forms.TextBox();
             this.WorkLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.TagLabel = new System.Windows.Forms.Label();
-            this.TagInfoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(126, 441);
+            this.SaveButton.Location = new System.Drawing.Point(126, 342);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 32);
             this.SaveButton.TabIndex = 0;
@@ -260,39 +257,11 @@
             this.WorkLabel.Text = "Work";
             this.WorkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(74, 370);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 26);
-            this.textBox3.TabIndex = 20;
-            // 
-            // TagLabel
-            // 
-            this.TagLabel.Location = new System.Drawing.Point(18, 373);
-            this.TagLabel.Name = "TagLabel";
-            this.TagLabel.Size = new System.Drawing.Size(50, 18);
-            this.TagLabel.TabIndex = 19;
-            this.TagLabel.Text = "Tags";
-            this.TagLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TagInfoLabel
-            // 
-            this.TagInfoLabel.Location = new System.Drawing.Point(80, 399);
-            this.TagInfoLabel.Name = "TagInfoLabel";
-            this.TagInfoLabel.Size = new System.Drawing.Size(174, 18);
-            this.TagInfoLabel.TabIndex = 21;
-            this.TagInfoLabel.Text = "(comma separated)";
-            this.TagInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // EditEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 486);
-            this.Controls.Add(this.TagInfoLabel);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.TagLabel);
+            this.ClientSize = new System.Drawing.Size(328, 389);
             this.Controls.Add(this.WorkTextBox);
             this.Controls.Add(this.WorkLabel);
             this.Controls.Add(this.MobileTextBox);
@@ -343,8 +312,5 @@
         private System.Windows.Forms.Label MobileLabel;
         private System.Windows.Forms.TextBox WorkTextBox;
         private System.Windows.Forms.Label WorkLabel;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label TagLabel;
-        private System.Windows.Forms.Label TagInfoLabel;
     }
 }

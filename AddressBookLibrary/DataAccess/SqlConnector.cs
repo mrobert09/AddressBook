@@ -78,20 +78,25 @@ namespace AddressBookLibrary.DataAccess
             p.Add("personID", entry.id);
             connection.Execute("dbo.spPhone_Delete", p, commandType: CommandType.StoredProcedure);
 
-            foreach (PhoneNumberModel number in entry.PhoneNumbers)
+            if (entry.PhoneNumbers != null)
             {
-                if (number.Description == "Home")
+                foreach (PhoneNumberModel number in entry.PhoneNumbers)
                 {
-                    p.Add("phoneType", 1);
-                } else if (number.Description == "Mobile") 
-                {
-                    p.Add("phoneType", 2);
-                } else if (number.Description == "Work")
-                {
-                    p.Add("phoneType", 3);
+                    if (number.Description == "Home")
+                    {
+                        p.Add("phoneType", 1);
+                    }
+                    else if (number.Description == "Mobile")
+                    {
+                        p.Add("phoneType", 2);
+                    }
+                    else if (number.Description == "Work")
+                    {
+                        p.Add("phoneType", 3);
+                    }
+                    p.Add("phoneNumber", number.Number);
+                    connection.Execute("dbo.spPhone_Insert", p, commandType: CommandType.StoredProcedure);
                 }
-                p.Add("phoneNumber", number.Number);
-                connection.Execute("dbo.spPhone_Insert", p, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -177,13 +182,15 @@ namespace AddressBookLibrary.DataAccess
         /// Fetches all names from the database.
         /// </summary>
         /// <returns>List of strings</returns>
-        public List<String> GetEntries()
+        public List<String> GetEntries(string filter)
         {
             List<String> output = new List<String>();
+            var p = new DynamicParameters();
+            p.Add("filter", filter);
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnString("AddressBook")))
             {
-                output = connection.Query<String>("dbo.spPerson_GetAll").ToList();
+                output = connection.Query<String>("dbo.spPerson_GetAll", p, commandType: CommandType.StoredProcedure).ToList();
             }
 
             return output;

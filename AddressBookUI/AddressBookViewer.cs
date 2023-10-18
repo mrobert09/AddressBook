@@ -40,7 +40,7 @@ namespace AddressBookUI
         public void RefreshList()
         {
             GlobalConfig.Connection.DeleteUnusedData();
-            List<String> names = GlobalConfig.Connection.GetEntries();
+            List<String> names = GlobalConfig.Connection.GetEntries(SearchTextBox.Text);
 
             AddressListBox.Items.Clear();
             foreach (string name in names)
@@ -108,6 +108,11 @@ namespace AddressBookUI
                 GlobalConfig.Connection.DeleteEntry(AddressListBox.SelectedItems[0].ToString(), true);
                 RefreshList();
             }
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            RefreshList();
         }
     }
 }

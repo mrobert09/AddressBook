@@ -34,6 +34,7 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NewButton
@@ -90,11 +91,22 @@
             this.SearchTextBox.Size = new System.Drawing.Size(166, 20);
             this.SearchTextBox.TabIndex = 8;
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Location = new System.Drawing.Point(240, 262);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(75, 32);
+            this.RefreshButton.TabIndex = 9;
+            this.RefreshButton.Text = "Refresh";
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
             // AddressBookViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 312);
+            this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.DeleteButton);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }

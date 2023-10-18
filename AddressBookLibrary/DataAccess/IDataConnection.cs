@@ -14,7 +14,7 @@ namespace AddressBookLibrary.DataAccess
     {
         EntryModel SaveEntry(EntryModel entry, string nameSelected);
 
-        List<String> GetEntries();
+        List<String> GetEntries(string filter);
 
         dynamic GetAddress(string name);
 
