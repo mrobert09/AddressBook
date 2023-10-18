@@ -59,7 +59,39 @@ namespace AddressBookLibrary.DataAccess
 
                 ConnectPersonWithAddress(entry, connection);
 
+                SavePhoneNumbers(entry, connection);
+
+
+
                 return entry;
+            }
+        }
+
+        /// <summary>
+        /// Deletes any known records of phone numbers for entry, then adds the new phone numbers to the database.
+        /// </summary>
+        /// <param name="entry">Entry object with personID</param>
+        /// <param name="connection">Connection method (SQL)</param>
+        private void SavePhoneNumbers(EntryModel entry, IDbConnection connection)
+        {
+            var p = new DynamicParameters();
+            p.Add("personID", entry.id);
+            connection.Execute("dbo.spPhone_Delete", p, commandType: CommandType.StoredProcedure);
+
+            foreach (PhoneNumberModel number in entry.PhoneNumbers)
+            {
+                if (number.Description == "Home")
+                {
+                    p.Add("phoneType", 1);
+                } else if (number.Description == "Mobile") 
+                {
+                    p.Add("phoneType", 2);
+                } else if (number.Description == "Work")
+                {
+                    p.Add("phoneType", 3);
+                }
+                p.Add("phoneNumber", number.Number);
+                connection.Execute("dbo.spPhone_Insert", p, commandType: CommandType.StoredProcedure);
             }
         }
 
