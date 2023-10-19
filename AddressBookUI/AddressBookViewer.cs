@@ -17,6 +17,7 @@ namespace AddressBookUI
     public partial class AddressBookViewer : Form
     {
         private List<String> names = new List<String>();
+        private string filter = "";
 
         /// <summary>
         /// Empty constructor.
@@ -46,7 +47,10 @@ namespace AddressBookUI
             AddressListBox.Items.Clear();
             foreach (string name in names)
             {
-                AddressListBox.Items.Add(name);
+                if (name.ToLower().Contains(filter))
+                {
+                    AddressListBox.Items.Add(name);
+                }
             }
         }
 
@@ -119,9 +123,15 @@ namespace AddressBookUI
             }
         }
 
-        private void RefreshButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Method run anytime a character is added or removed from the Search text box. Refreshes the list of viewable entries.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            FetchListFromDatabase();
+            Control control = sender as Control;
+            filter = control.Text.ToLower();
             RefreshList();
         }
     }
