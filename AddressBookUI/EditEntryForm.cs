@@ -76,6 +76,7 @@ namespace AddressBookUI
                 };
 
                 GlobalConfig.Connection.SaveEntry(entry, passedName);
+                viewer.FetchListFromDatabase();
                 viewer.RefreshList();  // refreshes the listbox in AddressBookViewer
                 this.Close();
             }

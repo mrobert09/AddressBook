@@ -10,11 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
+using System.Xml.Linq;
 
 namespace AddressBookUI
 {
     public partial class AddressBookViewer : Form
     {
+        private List<String> names = new List<String>();
+
         /// <summary>
         /// Empty constructor.
         /// </summary>
@@ -31,6 +34,7 @@ namespace AddressBookUI
         private void AddressBookViewer_Load(object sender, EventArgs e)
         {
             this.ActiveControl = AddressListBox;
+            FetchListFromDatabase();
             RefreshList();
         }
         
@@ -39,14 +43,17 @@ namespace AddressBookUI
         /// </summary>
         public void RefreshList()
         {
-            GlobalConfig.Connection.DeleteUnusedData();
-            List<String> names = GlobalConfig.Connection.GetEntries(SearchTextBox.Text);
-
             AddressListBox.Items.Clear();
             foreach (string name in names)
             {
                 AddressListBox.Items.Add(name);
             }
+        }
+
+        public void FetchListFromDatabase()
+        {
+            GlobalConfig.Connection.DeleteUnusedData();
+            names =  GlobalConfig.Connection.GetEntries(SearchTextBox.Text);
         }
 
         /// <summary>
@@ -106,12 +113,15 @@ namespace AddressBookUI
             else
             {
                 GlobalConfig.Connection.DeleteEntry(AddressListBox.SelectedItems[0].ToString(), true);
+                names.Remove(AddressListBox.SelectedItems[0].ToString());
+                AddressListBox.Items.Remove(AddressListBox.SelectedItems[0].ToString());
                 RefreshList();
             }
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
+            FetchListFromDatabase();
             RefreshList();
         }
     }
