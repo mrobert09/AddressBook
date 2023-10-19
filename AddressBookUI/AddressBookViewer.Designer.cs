@@ -53,6 +53,7 @@
             this.AddressListBox.Name = "AddressListBox";
             this.AddressListBox.Size = new System.Drawing.Size(222, 264);
             this.AddressListBox.TabIndex = 2;
+            this.AddressListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressListBox_MouseDoubleClick);
             // 
             // EditButton
             // 
@@ -90,6 +91,7 @@
             this.SearchTextBox.Size = new System.Drawing.Size(166, 20);
             this.SearchTextBox.TabIndex = 8;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            this.SearchTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressListBox_MouseDoubleClick);
             // 
             // AddressBookViewer
             // 

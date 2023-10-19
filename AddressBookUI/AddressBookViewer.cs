@@ -134,5 +134,20 @@ namespace AddressBookUI
             filter = control.Text.ToLower();
             RefreshList();
         }
+
+        /// <summary>
+        /// Double click event activation works. Equivalent to selecting an item with a single click and hitting "Edit" button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddressListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int prevSelected = AddressListBox.SelectedIndex;
+            AddressListBox.SelectedIndex = AddressListBox.IndexFromPoint(e.Location);
+            EditButton_Click(sender, e);
+            if (AddressListBox.SelectedIndex == -1) {
+                AddressListBox.SelectedIndex = prevSelected;
+            }
+        }
     }
 }
