@@ -138,13 +138,20 @@ namespace AddressBookLibrary.DataAccess
             return p.Get<int>("@addressID");
         }
 
-        private bool UserWarning(EntryModel entry, IDbConnection connection, string currentEntry)
+        /// <summary>
+        /// Warning box that appears if attempting to overwrite entry already present in database (duplicate name)
+        /// </summary>
+        /// <param name="entry">Entry object</param>
+        /// <param name="connection">Connection method (SQL)</param>
+        /// <param name="nameSelected">Name box from when EditForm loaded to determine if making a new entry or not.</param>
+        /// <returns></returns>
+        private bool UserWarning(EntryModel entry, IDbConnection connection, string nameSelected)
         {
             var p = new DynamicParameters();
             p.Add("@name", entry.Name);
 
             if (connection.Query<int>("dbo.spPerson_GetID", p, commandType: CommandType.StoredProcedure).ToList().Count != 0
-                && entry.Name != currentEntry)  // if ID exists and we have changed the name of the person being edited
+                && entry.Name != nameSelected)  // if ID exists and we have changed the name of the person being edited
             {
                 // Allow user to cancel overwriting data
                 DialogResult choice = MessageBox.Show("Name already exists. Overwrite data?", "Duplicate Name", MessageBoxButtons.YesNo);

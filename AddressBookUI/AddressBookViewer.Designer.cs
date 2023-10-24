@@ -38,6 +38,7 @@
             // 
             // NewButton
             // 
+            this.NewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NewButton.Location = new System.Drawing.Point(240, 29);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(75, 32);
@@ -48,6 +49,9 @@
             // 
             // AddressListBox
             // 
+            this.AddressListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AddressListBox.FormattingEnabled = true;
             this.AddressListBox.Location = new System.Drawing.Point(12, 30);
             this.AddressListBox.Name = "AddressListBox";
@@ -57,6 +61,7 @@
             // 
             // EditButton
             // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EditButton.Location = new System.Drawing.Point(240, 67);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 32);
@@ -67,6 +72,7 @@
             // 
             // DeleteButton
             // 
+            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteButton.Location = new System.Drawing.Point(240, 105);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 32);
@@ -86,12 +92,13 @@
             // 
             // SearchTextBox
             // 
+            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchTextBox.Location = new System.Drawing.Point(68, 9);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(166, 20);
             this.SearchTextBox.TabIndex = 8;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            this.SearchTextBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AddressListBox_MouseDoubleClick);
             // 
             // AddressBookViewer
             // 
@@ -104,6 +111,7 @@
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddressListBox);
             this.Controls.Add(this.NewButton);
+            this.MinimumSize = new System.Drawing.Size(250, 200);
             this.Name = "AddressBookViewer";
             this.Text = "Address Book";
             this.Load += new System.EventHandler(this.AddressBookViewer_Load);

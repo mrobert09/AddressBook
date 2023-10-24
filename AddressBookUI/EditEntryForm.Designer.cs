@@ -51,6 +51,7 @@
             // 
             // SaveButton
             // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.SaveButton.Location = new System.Drawing.Point(126, 342);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 32);
@@ -97,6 +98,7 @@
             // 
             // ZipLabel
             // 
+            this.ZipLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ZipLabel.Location = new System.Drawing.Point(135, 159);
             this.ZipLabel.Name = "ZipLabel";
             this.ZipLabel.Size = new System.Drawing.Size(50, 18);
@@ -106,6 +108,8 @@
             // 
             // NameTextBox
             // 
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(74, 24);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(203, 26);
@@ -113,6 +117,8 @@
             // 
             // StreetTextBox
             // 
+            this.StreetTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.StreetTextBox.Location = new System.Drawing.Point(74, 92);
             this.StreetTextBox.Name = "StreetTextBox";
             this.StreetTextBox.Size = new System.Drawing.Size(203, 26);
@@ -120,6 +126,8 @@
             // 
             // CityTextBox
             // 
+            this.CityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CityTextBox.Location = new System.Drawing.Point(74, 124);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(203, 26);
@@ -127,6 +135,8 @@
             // 
             // StateComboBox
             // 
+            this.StateComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.StateComboBox.FormattingEnabled = true;
             this.StateComboBox.Items.AddRange(new object[] {
             "AL",
@@ -186,6 +196,7 @@
             // 
             // ZipTextBox
             // 
+            this.ZipTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ZipTextBox.Location = new System.Drawing.Point(191, 156);
             this.ZipTextBox.Name = "ZipTextBox";
             this.ZipTextBox.Size = new System.Drawing.Size(86, 26);
@@ -193,6 +204,7 @@
             // 
             // HomeLabel
             // 
+            this.HomeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.HomeLabel.Location = new System.Drawing.Point(18, 240);
             this.HomeLabel.Name = "HomeLabel";
             this.HomeLabel.Size = new System.Drawing.Size(50, 18);
@@ -211,6 +223,8 @@
             // 
             // HomeTextBox
             // 
+            this.HomeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.HomeTextBox.Location = new System.Drawing.Point(74, 237);
             this.HomeTextBox.Name = "HomeTextBox";
             this.HomeTextBox.Size = new System.Drawing.Size(203, 26);
@@ -218,6 +232,7 @@
             // 
             // PhoneLabel
             // 
+            this.PhoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PhoneLabel.Location = new System.Drawing.Point(123, 216);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(78, 18);
@@ -227,6 +242,8 @@
             // 
             // MobileTextBox
             // 
+            this.MobileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.MobileTextBox.Location = new System.Drawing.Point(74, 269);
             this.MobileTextBox.Name = "MobileTextBox";
             this.MobileTextBox.Size = new System.Drawing.Size(203, 26);
@@ -234,6 +251,7 @@
             // 
             // MobileLabel
             // 
+            this.MobileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.MobileLabel.Location = new System.Drawing.Point(12, 272);
             this.MobileLabel.Name = "MobileLabel";
             this.MobileLabel.Size = new System.Drawing.Size(56, 18);
@@ -243,6 +261,8 @@
             // 
             // WorkTextBox
             // 
+            this.WorkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.WorkTextBox.Location = new System.Drawing.Point(74, 301);
             this.WorkTextBox.Name = "WorkTextBox";
             this.WorkTextBox.Size = new System.Drawing.Size(203, 26);
@@ -250,6 +270,7 @@
             // 
             // WorkLabel
             // 
+            this.WorkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.WorkLabel.Location = new System.Drawing.Point(18, 304);
             this.WorkLabel.Name = "WorkLabel";
             this.WorkLabel.Size = new System.Drawing.Size(50, 18);
@@ -283,6 +304,8 @@
             this.Controls.Add(this.SaveButton);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(344, 428);
+            this.MinimumSize = new System.Drawing.Size(344, 428);
             this.Name = "EditEntryForm";
             this.Text = "Edit Entry";
             this.Load += new System.EventHandler(this.EditEntryForm_Load);
