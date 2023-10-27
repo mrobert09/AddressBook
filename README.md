@@ -30,4 +30,12 @@ The logical structure of the application is simplified into three main areas:
 ## Implementation
 After doing some research on similar projects, I opted for a two-window implementation. The first window seen upon launching the program is the main window that automatically populates names fetched from the database. This window features a search box for filtering names in the event a lot of entries exist. This filtering happens "client-side", and does not need to connect to the SQL server after the initial fetching of names.
 
+![](./AddressBookLibrary/imgs/MainScreen.PNG)
+
+Example of filtering names:
+
+![](./AddressBookLibrary/imgs/Filtering.gif)
+
 The second window is a basic entry viewer/editor. Duplicate names are not allowed in the database and if the user were to create a new entry (or change an entry name to a different, already present name in the system) the user receives a warning that overwriting will occur. Upon saving an entry's information, a fresh call to the server is made to retrieve the names of all entries.
+
+![](./AddressBookLibrary/imgs/EditScreen.PNG)
