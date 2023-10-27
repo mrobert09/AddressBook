@@ -57,5 +57,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="imgs\EditScreen.PNG" />
+    <Content Include="imgs\Filtering.gif" />
+    <Content Include="imgs\MainScreen.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
